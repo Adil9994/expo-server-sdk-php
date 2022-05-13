@@ -56,11 +56,11 @@ class ExpoErrorManager
 
         $error = $response['errors'][0];
         $message = $error['message'];
-        $code = $error['code'];
+        $expoCode = $error['code'];
 
         $details = $error['details'] ?? [];
 
-        return new ExpoException($message, $code, $details);
+        return new ExpoException($message, $statusCode, null, $expoCode, $details);
     }
 
     /**

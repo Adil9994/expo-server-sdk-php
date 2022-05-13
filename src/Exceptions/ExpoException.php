@@ -6,12 +6,14 @@ use Throwable;
 
 class ExpoException extends \Exception
 {
+    protected $expoCode;
     protected $details;
 
-    public function __construct($message = "", $code = 0, $details = [], Throwable $previous = null)
+    public function __construct($message = "", $statusCode = 0, Throwable $previous = null, $expoCode = null, $details = [])
     {
-        parent::__construct($message, $code, $previous);
+        parent::__construct($message, $statusCode, $previous);
 
+        $this->expoCode = $expoCode;
         $this->details = $details;
     }
 }
