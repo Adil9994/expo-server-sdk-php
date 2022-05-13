@@ -58,12 +58,9 @@ class ExpoErrorManager
         $message = $error['message'];
         $code = $error['code'];
 
-        if (is_string($code)) {
-            $message = "{$code}: {$message}";
-            $code = $statusCode;
-        }
+        $details = $error['details'] ?? [];
 
-        return new ExpoException($message, $code);
+        return new ExpoException($message, $code, $details);
     }
 
     /**
