@@ -16,4 +16,14 @@ class ExpoException extends \Exception
         $this->expoCode = $expoCode;
         $this->details = $details;
     }
+
+    public function getExpoCode()
+    {
+        return $this->expoCode;
+    }
+
+    public function getDetails()
+    {
+        return $this->details;
+    }
 }
